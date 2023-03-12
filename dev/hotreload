@@ -1,0 +1,2 @@
+find lib/ -name '*.dart' | \
+    entr -p kill -USR1 $(cat /tmp/flutter.pid)

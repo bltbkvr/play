@@ -1,0 +1,23 @@
+
+Transition { currentState: 0, event: Increment, nextState: 1 }
+Change { currentState: 0, nextState: 1 }??? How does the event Infer that in is Increment
+
+Ne ponyal bloc selector
+
+questions for discussion:
+What does testable mean in means of code?
+Why not use Cubit.state?
+
+
+???Note: await Future.delayed(Duration.zero) is added for
+this example to avoid canceling the subscription immediately.
+
+should never does not mean it is not possible???Blocs should never directly emit new states. Instead every state change must be
+ output in response to an incoming event within an EventHandler.
+
+
+Both blocs and cubits will ignore duplicate states. If we emit State
+ nextState where state == nextState, then no state change will occur.
+expose funtions-предоставлять функции
+
+flutter bloc additioncustom snippets(ultisnips)
