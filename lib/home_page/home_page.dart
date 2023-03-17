@@ -10,6 +10,7 @@ import 'package:play/home_page/home_page_bloc.dart';
 import 'package:play/monkes/monkey_bloc.dart';
 import 'package:play/profile_page/profile_page.dart';
 import 'package:play/settings_page/settings.dart';
+import 'package:play/stepper_page/stepper_page.dart';
 import 'package:play/weather/weather.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -21,29 +22,31 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     var appBars = [];
     var screens = [
+      StepperPage(),
       Body(),
       ProfilePage(),
-      SettingsPage(),
-      Weather(),
-      CurrencyPage()
+      // SettingsPage(),
+      // Weather(),
+      // CurrencyPage()
     ];
     return Scaffold(
-      appBar: AppBar(
-          // CUBIT
-          title: Text("RakhatApp"),
-          actions: <Widget>[
-            BlocBuilder<HomePageCubit, int>(
-              builder: (context, state) => state == 0
-                  ? Padding(
-                      padding: EdgeInsets.only(right: 50.0),
-                      child: GestureDetector(
-                        onTap: () {},
-                        child: ShareButton(),
-                      ),
-                    )
-                  : SizedBox(),
-            ),
-          ]),
+      // appBar: AppBar(
+      //   // CUBIT
+      //   title: Text("RakhatApp"),
+      //   // actions: <Widget>[
+      //   //   BlocBuilder<HomePageCubit, int>(
+      //   //     builder: (context, state) => state == 0
+      //   //         ? Padding(
+      //   //             padding: EdgeInsets.only(right: 50.0),
+      //   //             child: GestureDetector(
+      //   //               onTap: () {},
+      //   //               child: ShareButton(),
+      //   //             ),
+      //   //           )
+      //   //         : SizedBox(),
+      //   //   ),
+      //   // ],
+      // ),
       backgroundColor: const Color.fromRGBO(249, 249, 249, 1),
       drawer: MainDrawer(),
       body: BlocBuilder<HomePageCubit, int>(

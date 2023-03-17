@@ -10,11 +10,12 @@ class BottomNavbar extends StatelessWidget {
   Widget build(BuildContext context) {
     var pageCubit = BlocProvider.of<HomePageCubit>(context);
     var items = const [
+      BottomNavigationBarItem(label: "stepper", icon: Icon(Icons.person)),
       BottomNavigationBarItem(label: "Hello", icon: Icon(Icons.home)),
       BottomNavigationBarItem(label: "Profile", icon: Icon(Icons.person)),
-      BottomNavigationBarItem(label: "Settings", icon: Icon(Icons.settings)),
-      BottomNavigationBarItem(label: "Weather", icon: Icon(Icons.cloud)),
-      BottomNavigationBarItem(label: "Currency", icon: Icon(Icons.currency_exchange)),
+      // BottomNavigationBarItem(label: "Settings", icon: Icon(Icons.settings)),
+      // BottomNavigationBarItem(label: "Weather", icon: Icon(Icons.cloud)),
+      // BottomNavigationBarItem(label: "Currency", icon: Icon(Icons.currency_exchange)),
     ];
     return BlocBuilder<HomePageCubit, int>(
         builder: (context, state) => BottomNavigationBar(
