@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +16,19 @@ class TimePeriod extends StatefulWidget {
 }
 
 class TimePeriodState extends State<TimePeriod> {
-  final controller = TextEditingController();
+  late final fromController;
+  late final toController;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    fromController = TextEditingController();
+    toController = TextEditingController();
+
+    fromController.addListener(() {
+      print(fromController.text);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +39,11 @@ class TimePeriodState extends State<TimePeriod> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            height: 45, //!!!ask Arman height 40 screenshot
+            height: 45, //TODO: 12312312
             width: 80,
             child: CupertinoTextField(
-              // controller: controller,//????? v chem raznica
+              onTap: () => {},
+              controller: fromController, //????? v chem raznica
               // onChanged: (value) {widget.setStart(value)},
               placeholderStyle: TextStyle(
                   fontSize: 15, color: GlobalStyles.disabledTextColor),
@@ -51,6 +66,7 @@ class TimePeriodState extends State<TimePeriod> {
             height: 45,
             width: 80,
             child: CupertinoTextField(
+              controller: toController,
               placeholderStyle: TextStyle(
                   fontSize: 15, color: GlobalStyles.disabledTextColor),
               padding: EdgeInsets.symmetric(vertical: 1, horizontal: 15),

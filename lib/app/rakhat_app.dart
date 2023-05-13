@@ -26,7 +26,14 @@ class _RakhatAppState extends State<RakhatApp> {
         builder: (context, state) => MaterialApp(
               title: 'Flutter Demo',
               theme: ThemeData(
-                primarySwatch: state,
+                appBarTheme: AppBarTheme(
+
+                backgroundColor: Colors.white,
+                foregroundColor: Colors.black,),
+                colorScheme: ColorScheme.light(
+                    //    primarySwatch: darks.green,
+                    ),
+                //primarySwatch: state,
               ),
               home: const MyHomePage(),
             ));

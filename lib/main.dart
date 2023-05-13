@@ -15,9 +15,7 @@ void main() async {
   await Hive.initFlutter();
   runApp(MultiBlocProvider(
     providers: [
-      BlocProvider(
-        create: ((context) => MonkeyCubit()),
-      ),
+      BlocProvider(create: ((context) => MonkeyCubit())),
       BlocProvider(
         create: ((context) => ColorCubit()),
       ),

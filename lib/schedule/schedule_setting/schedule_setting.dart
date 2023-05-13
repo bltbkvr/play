@@ -22,7 +22,7 @@ class ScheduleSettingState extends State<ScheduleSetting> {
       childs.add(DaySchedule());
     }
     return Container(
-      width: 350,
+
       decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(

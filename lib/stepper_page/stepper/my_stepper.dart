@@ -10,12 +10,12 @@ class MyStepper extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Widget> childs = [];
 
-    for(int i=0;i<totalQty;i++){
-      childs.add(buildStepLine(i));
+    for (int i = 0; i < totalQty; i++) {
+      childs.add(buildStepLine(context, i));
     }
     return Row(children: childs);
   }
-    /*
+  /*
     return Row(
       children: List.filled(totalQty, null)
           .asMap()
@@ -24,9 +24,10 @@ class MyStepper extends StatelessWidget {
           .toList(),
     );
      */
-  
 
-  Widget buildStepLine(int index) {
+  Widget buildStepLine(BuildContext context, int index) {
+    ThemeData theme = Theme.of(context);
+
     return Expanded(
       child: Column(
         children: [
@@ -41,7 +42,9 @@ class MyStepper extends StatelessWidget {
               height: 4,
               child: Container(
                 decoration: BoxDecoration(
-                  color: GlobalStyles.primaryColor,
+                  color: current == index
+                      ? theme.colorScheme.primary
+                      : GlobalStyles.disabledColor,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(3),
                     topRight: Radius.circular(3),

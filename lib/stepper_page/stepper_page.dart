@@ -22,8 +22,8 @@ class _StepperPageState extends State<StepperPage> {
     return Scaffold(
       appBar: AppBar(
           shadowColor: Colors.transparent,
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
+          //backgroundColor: Colors.white,
+          //foregroundColor: Colors.black,
           title: Text("Stepper demo"),
           bottom: PreferredSize(
             child: MyStepper(
